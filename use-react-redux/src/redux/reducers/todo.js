@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const initState = {
   items: []
 };
@@ -19,6 +21,11 @@ const setTodos = (items) => {
   };
 };
 
+const fetchTodos = () => async (dispatch) => {
+  const res = await axios.get('https://jsonplaceholder.typicode.com/todos');
+  dispatch(setTodos(res.data));
+};
+
 const reducer = (state = initState, action) => {
   switch (action.type) {
     case ADD_TODO:
@@ -36,5 +43,5 @@ const reducer = (state = initState, action) => {
   }
 };
 
-export { addTodo, setTodos };
+export { addTodo, setTodos, fetchTodos };
 export default reducer;
