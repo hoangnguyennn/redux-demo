@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hoangnguyennn/redux-demo#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "redux": "^4.0.5"
   }
 }
